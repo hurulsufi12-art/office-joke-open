@@ -26,6 +26,8 @@ def validate(text):
         return False
     if "\n" in text or "\r" in text:
         return False
+    if any(ord(ch) < 32 and ch not in "\t" for ch in text):
+        return False
     return True
 
 
